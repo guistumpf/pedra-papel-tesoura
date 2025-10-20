@@ -1,0 +1,50 @@
+*{
+    margin: 0;
+box-sizing: border-box;
+}
+
+
+body{
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+    background-color: #808080;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+section{
+ padding: 20px;
+    background-color: rgb(255, 255, 255);
+text-align: center;
+border-radius: 10px;
+box-shadow:1px 1px 4px black;
+}
+
+.pedra{
+    
+    background-color: #000000;
+}
+
+.papel{
+    background-color: #4B0082;
+}
+
+.tesoura{
+    background-color: rgb(31, 31, 202);
+}
+
+button{
+    padding: 10px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+background-color: #9c7e7e;
+border: 2px #121212 solid;
+cursor: pointer;
+}
+
+button:hover{
+background-color: #ffffff;
+
+}
+
+
