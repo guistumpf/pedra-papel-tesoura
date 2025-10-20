@@ -57,35 +57,41 @@ function jogar(escolhajogador) {
     console.log("Máquina escolheu: " + escolhamaquina);
 
 
-    jogadasuser.textContent = "Você: " + escolhajogador
-    jogadasmaquina.textContent = "Máquina: " + escolhamaquina
+    jogadasuser.innerText = "Você: " + escolhajogador
+    jogadasmaquina.innerText = "Máquina: " + escolhamaquina
 
     //empate   
     if (escolhajogador === escolhamaquina) {
-        resultadoElemento.textContent = "Deu empate!";
-
+        resultadoElemento.innerText = "Deu empate!";
+resultadoElemento.style.color = "grey"
         //logica do ppt aplicada a um else if
     } else if (
         (escolhajogador === '✊' && escolhamaquina === '✂️') ||
         (escolhajogador === '✋' && escolhamaquina === '✊') ||
         (escolhajogador === '✂️' && escolhamaquina === '✋')
-    ) {
-        resultadoElemento.textContent = "Você venceu!";
+    ) 
+    {
+        resultadoElemento.style.color = "green"
+        resultadoElemento.innerText = "Você venceu!";
 
         //se for diferente do resultado acima, a maquina vence
     } else {
-        resultadoElemento.textContent = "A máquina venceu!";
+        resultadoElemento.style.color = "red"
+        resultadoElemento.innerText  = "A máquina venceu!";
     }
+
+
+
 
     //coloca um timeout de 1500ms pro user começar um novo jogo
     setTimeout(function () {
 
         //coloca a variavel de volta pra false pra que o user consiga jogar dnv
         jogando = false
-
-        resultadoElemento.textContent = "Faça sua jogada!";
-        jogadasmaquina.textContent = "";
-        jogadasuser.textContent = "";
+resultadoElemento.style.color = ""
+        resultadoElemento.innerText = "Faça sua jogada!";
+        jogadasmaquina.innerText = "";
+        jogadasuser.innerText = "";
 
     }, 1500) //1500ms = 1.5 segundos 
 }
