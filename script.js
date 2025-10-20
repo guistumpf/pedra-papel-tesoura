@@ -1,4 +1,5 @@
 
+const h3 = document.querySelector("h3")
 //variavel que define se algum jogo tá em progresso
 let jogando = false
 
@@ -28,7 +29,7 @@ function botoes() {
 //matematica logica da maquina
 function maquina() {
     // array com emojis, math.random aplicada pra selecionar uma das 3 opçoes da array. .floor pra retornar uma integer ou string e maquina[random] pra definir a array  
-    const maquina = ['✊', '✋', '✂️']
+    const maquina = ['✊', '✋', '✌️']
     const escolha = Math.random() * 3
     const random = Math.floor(escolha)
     const escolhamaquina = maquina[random]
@@ -64,20 +65,22 @@ function jogar(escolhajogador) {
     if (escolhajogador === escolhamaquina) {
         resultadoElemento.innerText = "Deu empate!";
 resultadoElemento.style.color = "grey"
+h3.innerText = ""
         //logica do ppt aplicada a um else if
     } else if (
-        (escolhajogador === '✊' && escolhamaquina === '✂️') ||
+        (escolhajogador === '✊' && escolhamaquina === '✌️') ||
         (escolhajogador === '✋' && escolhamaquina === '✊') ||
-        (escolhajogador === '✂️' && escolhamaquina === '✋')
+        (escolhajogador === '✌️' && escolhamaquina === '✋')
     ) 
     {
         resultadoElemento.style.color = "green"
         resultadoElemento.innerText = "Você venceu!";
-
+h3.innerText = ""
         //se for diferente do resultado acima, a maquina vence
     } else {
         resultadoElemento.style.color = "red"
         resultadoElemento.innerText  = "A máquina venceu!";
+        h3.innerText = ""
     }
 
 
@@ -92,6 +95,7 @@ resultadoElemento.style.color = ""
         resultadoElemento.innerText = "Faça sua jogada!";
         jogadasmaquina.innerText = "";
         jogadasuser.innerText = "";
+h3.innerText = "✌️ = tesoura ✋ = papel ✊ = pedra"
 
     }, 1500) //1500ms = 1.5 segundos 
 }
