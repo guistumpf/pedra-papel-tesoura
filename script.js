@@ -64,22 +64,21 @@ function jogar(escolhajogador) {
     //empate   
     if (escolhajogador === escolhamaquina) {
         resultadoElemento.innerText = "Deu empate!";
-resultadoElemento.style.color = "grey"
-h3.innerText = ""
+        resultadoElemento.style.color = "grey"
+        h3.innerText = ""
         //logica do ppt aplicada a um else if
     } else if (
         (escolhajogador === '✊' && escolhamaquina === '✌️') ||
         (escolhajogador === '✋' && escolhamaquina === '✊') ||
         (escolhajogador === '✌️' && escolhamaquina === '✋')
-    ) 
-    {
+    ) {
         resultadoElemento.style.color = "green"
         resultadoElemento.innerText = "Você venceu!";
-h3.innerText = ""
+        h3.innerText = ""
         //se for diferente do resultado acima, a maquina vence
     } else {
         resultadoElemento.style.color = "red"
-        resultadoElemento.innerText  = "A máquina venceu!";
+        resultadoElemento.innerText = "A máquina venceu!";
         h3.innerText = ""
     }
 
@@ -91,11 +90,11 @@ h3.innerText = ""
 
         //coloca a variavel de volta pra false pra que o user consiga jogar dnv
         jogando = false
-resultadoElemento.style.color = ""
+        resultadoElemento.style.color = ""
         resultadoElemento.innerText = "Faça sua jogada!";
         jogadasmaquina.innerText = "";
         jogadasuser.innerText = "";
-h3.innerText = "✌️ = tesoura ✋ = papel ✊ = pedra"
+        h3.innerText = "✌️ = tesoura ✋ = papel ✊ = pedra"
 
     }, 1500) //1500ms = 1.5 segundos 
 }
